@@ -1,5 +1,8 @@
 package obecj.IO;
-
+/****
+ * This property class describe behavior of it's variable/property
+ * This methods and variables are used to implement.
+ * ***/
 public class Property {
 	int id;
 	String address;
@@ -69,12 +72,16 @@ public class Property {
 	}
 
 	public double getProfitLoss() {
-		return profitLoss = NetIncome - taxes;
+		 profitLoss = NetIncome - taxes;
+		return Math.round(profitLoss);
 	}
 
 	public double getPercentGainLoss() {
-		 percentGainLoss = priceSold/totalCost;
+		 percentGainLoss = (priceSold/totalCost)*100;
+		 if(totalCost>priceSold){
+			 percentGainLoss=-percentGainLoss;
+		 }
 		return Math.round(percentGainLoss);
 	}
-
+	
 }
